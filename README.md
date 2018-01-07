@@ -6,13 +6,13 @@
 * This version is a nicer graphical representation of the C program I came up with during the summer of 2017
 
 ## Greens Tracker Title 
-![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens\ Tracker\ Title\ .png?raw=true)
+![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens-Tracker-Title.png?raw=true)
 
 ## Greens Tracker Water Session Welcome Screen 
-![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens\ Tracker\ Start\ Screen.png?raw=true)
+![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens-Tracker-Start-Screen.png?raw=true)
 
 ## Greens Tracker Water Session Welcome Screen 
-![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens\ Tracker\ Data\ Entry\ Screen.png?raw=true)
+![Alt text](https://github.com/alexanderMontague/GreensTracker/tree/master/Demo/Greens-Tracker-Data-Entry-Screen.png?raw=true)
 
 *Use or modification of this program is allowed, such that credit is given where necessary*
 *Alexander Montague 2018*
