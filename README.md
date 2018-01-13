@@ -15,6 +15,10 @@
 ### Greens Tracker Lap Data Entry Screen
 ![Data Entry](/Demo/Greens-Tracker-Data-Entry-Screen.png?raw=true "Demo Data where watering information is added")
 
+
+### Greens Tracker Previous Water Session View Screen
+![Previous Water Sessions](/Demo/GT-View-Water-Sessions.png?raw=true "All previous water session data can be viewed here. Red day numbers represent days where there is water session data")
+
 *Use or modification of this program is allowed, such that credit is given where necessary*
 
 *Alexander Montague 2018*
