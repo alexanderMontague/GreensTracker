@@ -65,7 +65,7 @@ public class titlePanel extends JPanel{
 		BufferedWriter fileWriter;
 		try {
 			fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
-			fileWriter.write(waterLap.getText() + "~" + realStartTime.getText() + "|");
+			fileWriter.write(waterLap.getText() + "^" + realStartTime.getText() + "^");
 			fileWriter.close();
 		}
 		catch(IOException e) {

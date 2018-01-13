@@ -1,3 +1,4 @@
+// Alex Montague 2018
 // Data Entry JPanel Class
 // Contains all fields for hand watering 
 
@@ -108,7 +109,7 @@ public class dataEntry extends JPanel {
 		JLabel temperature = new JLabel("Temperature", JLabel.CENTER);
 		temperature.setFont(buttonFont);
 		tempTitles.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 1, Color.BLACK));
-		JLabel tempSpot = new JLabel("      Front\t\t\t\t\t\t\t\t\tMiddle\t\t\t\t\t\t\t\tBack");
+		JLabel tempSpot = new JLabel("      Front\t\t\t\t\t\t\t\t\tMiddle\t\t\t\t\t\t\t\t\t\tBack      ");
 		tempSpot.setFont(noBoldSmall);
 		tempTitles.add(temperature);
 		tempTitles.add(tempSpot);
@@ -117,7 +118,7 @@ public class dataEntry extends JPanel {
 		JLabel moisture = new JLabel("Moisture", JLabel.CENTER);
 		moisture.setFont(buttonFont);
 		moisTitles.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 1, Color.BLACK));
-		JLabel moisSpot = new JLabel("      Front\t\t\t\t\t\t\t\t\tMiddle\t\t\t\t\t\t\t\tBack");
+		JLabel moisSpot = new JLabel("      Front\t\t\t\t\t\t\t\t\tMiddle\t\t\t\t\t\t\t\t\t\tBack      ");
 		moisSpot.setFont(noBoldSmall);
 		moisTitles.add(moisture);
 		moisTitles.add(moisSpot);
@@ -613,19 +614,216 @@ public class dataEntry extends JPanel {
 	
 	public String getDataVals() {
 		
-		// Green# ~ wateredBOOL ~ temps ~ moist ~ notes + NewGreen#... <> New Lap ...
+		if(Tone1.getText().equals("")) {
+			Tone1.setText("N/A");
+		}
+		if(Tone2.getText().equals("")) {
+			Tone1.setText("N/A");
+		}
+		if(Tone3.getText().equals("")) {
+			Tone1.setText("N/A");
+		}
+		if(Ttwo1.getText().equals("")) {
+			Ttwo1.setText("N/A");
+		}
+		if(Ttwo2.getText().equals("")) {
+			Ttwo2.setText("N/A");
+		}
+		if(Ttwo3.getText().equals("")) {
+			Ttwo3.setText("N/A");
+		}
+		if(Tthree1.getText().equals("")) {
+			Tthree1.setText("N/A");
+		}
+		if(Tthree2.getText().equals("")) {
+			Tthree2.setText("N/A");
+		}
+		if(Tthree3.getText().equals("")) {
+			Tthree3.setText("N/A");
+		}
+		if(Tfour1.getText().equals("")) {
+			Tfour1.setText("N/A");
+		}
+		if(Tfour2.getText().equals("")) {
+			Tfour2.setText("N/A");
+		}
+		if(Tfour3.getText().equals("")) {
+			Tfour3.setText("N/A");
+		}
+		if(Tfive1.getText().equals("")) {
+			Tfive1.setText("N/A");
+		}
+		if(Tfive2.getText().equals("")) {
+			Tfive2.setText("N/A");
+		}
+		if(Tfive3.getText().equals("")) {
+			Tfive3.setText("N/A");
+		}
+		if(Tsix3.getText().equals("")) {
+			Tsix3.setText("N/A");
+		}
+		if(Tsix1.getText().equals("")) {
+			Tsix1.setText("N/A");
+		}
+		if(Tsix2.getText().equals("")) {
+			Tsix2.setText("N/A");
+		}
+		if(Tsix3.getText().equals("")) {
+			Tsix3.setText("N/A");
+		}
+		if(Tseven1.getText().equals("")) {
+			Tseven1.setText("N/A");
+		}
+		if(Tseven2.getText().equals("")) {
+			Tseven2.setText("N/A");
+		}
+		if(Tseven3.getText().equals("")) {
+			Tseven3.setText("N/A");
+		}
+		if(Teight1.getText().equals("")) {
+			Teight1.setText("N/A");
+		}
+		if(Teight2.getText().equals("")) {
+			Teight2.setText("N/A");
+		}
+		if(Teight3.getText().equals("")) {
+			Teight3.setText("N/A");
+		}
+		if(Tnine1.getText().equals("")) {
+			Tnine1.setText("N/A");
+		}
+		if(Tnine2.getText().equals("")) {
+			Tnine2.setText("N/A");
+		}
+		if(Tnine3.getText().equals("")) {
+			Tnine3.setText("N/A");
+		}
+		if(Mone1.getText().equals("")) {
+			Mone1.setText("N/A");
+		}
+		if(Mone2.getText().equals("")) {
+			Mone2.setText("N/A");
+		}
+		if(Mone3.getText().equals("")) {
+			Mone3.setText("N/A");
+		}
+		if(Mtwo1.getText().equals("")) {
+			Mtwo1.setText("N/A");
+		}
+		if(Mtwo2.getText().equals("")) {
+			Mtwo2.setText("N/A");
+		}
+		if(Mtwo3.getText().equals("")) {
+			Mtwo3.setText("N/A");
+		}
+		if(Mthree1.getText().equals("")) {
+			Mthree1.setText("N/A");
+		}
+		if(Mthree2.getText().equals("")) {
+			Mthree2.setText("N/A");
+		}
+		if(Mthree3.getText().equals("")) {
+			Mthree3.setText("N/A");
+		}
+		if(Mfour1.getText().equals("")) {
+			Mfour1.setText("N/A");
+		}
+		if(Mfour2.getText().equals("")) {
+			Mfour2.setText("N/A");
+		}
+		if(Mfour3.getText().equals("")) {
+			Mfour3.setText("N/A");
+		}
+		if(Mfive1.getText().equals("")) {
+			Mfive1.setText("N/A");
+		}
+		if(Mfive2.getText().equals("")) {
+			Mfive2.setText("N/A");
+		}
+		if(Mfive3.getText().equals("")) {
+			Mfive3.setText("N/A");
+		}
+		if(Msix3.getText().equals("")) {
+			Msix3.setText("N/A");
+		}
+		if(Msix1.getText().equals("")) {
+			Msix1.setText("N/A");
+		}
+		if(Msix2.getText().equals("")) {
+			Msix2.setText("N/A");
+		}
+		if(Msix3.getText().equals("")) {
+			Msix3.setText("N/A");
+		}
+		if(Mseven1.getText().equals("")) {
+			Mseven1.setText("N/A");
+		}
+		if(Mseven2.getText().equals("")) {
+			Mseven2.setText("N/A");
+		}
+		if(Mseven3.getText().equals("")) {
+			Mseven3.setText("N/A");
+		}
+		if(Meight1.getText().equals("")) {
+			Meight1.setText("N/A");
+		}
+		if(Meight2.getText().equals("")) {
+			Meight2.setText("N/A");
+		}
+		if(Meight3.getText().equals("")) {
+			Meight3.setText("N/A");
+		}
+		if(Mnine1.getText().equals("")) {
+			Mnine1.setText("N/A");
+		}
+		if(Mnine2.getText().equals("")) {
+			Mnine2.setText("N/A");
+		}
+		if(Mnine3.getText().equals("")) {
+			Mnine3.setText("N/A");
+		}
+		if(notes1.getText().equals("")) {
+			notes1.setText("N/A");
+		}
+		if(notes2.getText().equals("")) {
+			notes2.setText("N/A");
+		}
+		if(notes3.getText().equals("")) {
+			notes3.setText("N/A");
+		}
+		if(notes4.getText().equals("")) {
+			notes4.setText("N/A");
+		}
+		if(notes5.getText().equals("")) {
+			notes5.setText("N/A");
+		}
+		if(notes6.getText().equals("")) {
+			notes6.setText("N/A");
+		}
+		if(notes7.getText().equals("")) {
+			notes7.setText("N/A");
+		}
+		if(notes8.getText().equals("")) {
+			notes8.setText("N/A");
+		}
+		if(notes9.getText().equals("")) {
+			notes9.setText("N/A");
+		}
+		
+		
+		// Green# ^ wateredBOOL ^ temps ^ moist ^ notes + NewGreen#... <> New Lap ...
 		
 		String dataVals;
 		
-		dataVals = "Green 1~" + Wone1.isSelected() + "~" + Tone1.getText() + "~" + Tone2.getText() + "~" + Tone3.getText() + "~" + Mone1.getText() + "~" + Mone2.getText() + "~" + Mone3.getText() + "~" + notes1.getText() + "+"; 
-		dataVals = dataVals + "Green 2~" + Wtwo1.isSelected() + "~" + Ttwo1.getText() + "~" + Ttwo2.getText() + "~" + Ttwo3.getText() + "~" + Mtwo1.getText() + "~" + Mtwo2.getText() + "~" + Mtwo3.getText() + "~" + notes2.getText() + "+";
-		dataVals = dataVals + "Green 3~" + Wthree1.isSelected() + "~" + Tthree1.getText() + "~" + Tthree2.getText() + "~" + Tthree3.getText() + "~" + Mthree1.getText() + "~" + Mthree2.getText() + "~" + Mthree3.getText() + "~" + notes3.getText() + "+";
-		dataVals = dataVals + "Green 4~" + Wfour1.isSelected() + "~" + Tfour1.getText() + "~" + Tfour2.getText() + "~" + Tfour3.getText() + "~" + Mfour1.getText() + "~" + Mfour2.getText() + "~" + Mfour3.getText() + "~" + notes4.getText() + "+";
-		dataVals = dataVals + "Green 5~" + Wfive1.isSelected() + "~" + Tfive1.getText() + "~" + Tfive2.getText() + "~" + Tfive3.getText() + "~" + Mfive1.getText() + "~" + Mfive2.getText() + "~" + Mfive3.getText() + "~" + notes5.getText() + "+";
-		dataVals = dataVals + "Green 6~" + Wsix1.isSelected() + "~" + Tsix1.getText() + "~" + Tsix2.getText() + "~" + Tsix3.getText() + "~" + Msix1.getText() + "~" + Msix2.getText() + "~" + Msix3.getText() + "~" + notes6.getText() + "+";
-		dataVals = dataVals + "Green 7~" + Wseven1.isSelected() + "~" + Tseven1.getText() + "~" + Tseven2.getText() + "~" + Tseven3.getText() + "~" + Mseven1.getText() + "~" + Mseven2.getText() + "~" + Mseven3.getText() + "~" + notes7.getText() + "+";
-		dataVals = dataVals + "Green 8~" + Weight1.isSelected() + "~" + Teight1.getText() + "~" + Teight2.getText() + "~" + Teight3.getText() + "~" + Meight1.getText() + "~" + Meight2.getText() + "~" + Meight3.getText() + "~" + notes8.getText() + "+";
-		dataVals = dataVals + "Green 9~" + Wnine1.isSelected() + "~" + Tnine1.getText() + "~" + Tnine2.getText() + "~" + Tnine3.getText() + "~" + Mnine1.getText() + "~" + Mnine2.getText() + "~" + Mnine3.getText() + "~" + notes9.getText() + "<>";		
+		dataVals = "Green 1^" + Wone1.isSelected() + "^" + Tone1.getText() + "^" + Tone2.getText() + "^" + Tone3.getText() + "^" + Mone1.getText() + "^" + Mone2.getText() + "^" + Mone3.getText() + "^" + notes1.getText() + "+"; 
+		dataVals = dataVals + "Green 2^" + Wtwo1.isSelected() + "^" + Ttwo1.getText() + "^" + Ttwo2.getText() + "^" + Ttwo3.getText() + "^" + Mtwo1.getText() + "^" + Mtwo2.getText() + "^" + Mtwo3.getText() + "^" + notes2.getText() + "+";
+		dataVals = dataVals + "Green 3^" + Wthree1.isSelected() + "^" + Tthree1.getText() + "^" + Tthree2.getText() + "^" + Tthree3.getText() + "^" + Mthree1.getText() + "^" + Mthree2.getText() + "^" + Mthree3.getText() + "^" + notes3.getText() + "+";
+		dataVals = dataVals + "Green 4^" + Wfour1.isSelected() + "^" + Tfour1.getText() + "^" + Tfour2.getText() + "^" + Tfour3.getText() + "^" + Mfour1.getText() + "^" + Mfour2.getText() + "^" + Mfour3.getText() + "^" + notes4.getText() + "+";
+		dataVals = dataVals + "Green 5^" + Wfive1.isSelected() + "^" + Tfive1.getText() + "^" + Tfive2.getText() + "^" + Tfive3.getText() + "^" + Mfive1.getText() + "^" + Mfive2.getText() + "^" + Mfive3.getText() + "^" + notes5.getText() + "+";
+		dataVals = dataVals + "Green 6^" + Wsix1.isSelected() + "^" + Tsix1.getText() + "^" + Tsix2.getText() + "^" + Tsix3.getText() + "^" + Msix1.getText() + "^" + Msix2.getText() + "^" + Msix3.getText() + "^" + notes6.getText() + "+";
+		dataVals = dataVals + "Green 7^" + Wseven1.isSelected() + "^" + Tseven1.getText() + "^" + Tseven2.getText() + "^" + Tseven3.getText() + "^" + Mseven1.getText() + "^" + Mseven2.getText() + "^" + Mseven3.getText() + "^" + notes7.getText() + "+";
+		dataVals = dataVals + "Green 8^" + Weight1.isSelected() + "^" + Teight1.getText() + "^" + Teight2.getText() + "^" + Teight3.getText() + "^" + Meight1.getText() + "^" + Meight2.getText() + "^" + Meight3.getText() + "^" + notes8.getText() + "+";
+		dataVals = dataVals + "Green 9^" + Wnine1.isSelected() + "^" + Tnine1.getText() + "^" + Tnine2.getText() + "^" + Tnine3.getText() + "^" + Mnine1.getText() + "^" + Mnine2.getText() + "^" + Mnine3.getText() + "^" + notes9.getText() + "<>";		
 		
 		return dataVals;
 	}
