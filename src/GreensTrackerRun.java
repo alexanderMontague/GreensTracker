@@ -355,7 +355,7 @@ public class GreensTrackerRun extends JFrame {
             		SwingCalendar newCal = new SwingCalendar();
             		basePanel.add(newCal);
             		JSplitPane bottomPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-            		bottomPanel.setResizeWeight(0.8);
+            		bottomPanel.setResizeWeight(0.95);
             		bottomPanel.setEnabled(false);
             		bottomPanel.setDividerSize(0);
             		JPanel top = new JPanel(new GridLayout(1, 1));
@@ -379,6 +379,7 @@ public class GreensTrackerRun extends JFrame {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
                         		try {
+                        			boolean found = false;
                         			int calGetDay = (Integer)newCal.table.getValueAt(newCal.table.getSelectedRow(), newCal.table.getSelectedColumn());
                             		for(int i = 0; i < newCal.waterSessions.size(); i++) {
 	    	        	        				waterSession printSession = newCal.waterSessions.get(i);						// current waterSession that is being looked at 
@@ -390,27 +391,32 @@ public class GreensTrackerRun extends JFrame {
 	    	        			        			data.setText("Water Date: " + printSession.splitDayName + " " + printSession.splitMonth + " " + printSession.splitDay + " " + printSession.splitYear + "\n");
 	    	        			        			data.append("Initial Session Start Time: " + printSession.initialStart + "\n\n");
 	    	        			        			for(int z = 0; z < printSession.lapList.size(); z++) {
+	    	        			        				found = true;
 	    	        								data.append(printSession.lapList.get(z).lapNum + "\n");
 	    	        								data.append(printSession.lapList.get(z).lapStartTime + "\n");
 	    	        								data.append("|------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-	    	        								data.append("|\tGreen #\t|\tWatered?\t|\tTemperature (F / M / B)\t|\tMoisture (F / M / B)\t|\tNotes\t|\n");
+	    	        								data.append("|\tGreen #\t|\tWatered?\t|\tTemperature (F / M / B)\t\t|\tMoisture (F / M / B)\t\t|\tNotes\t\t|\n");
 	    	        							    data.append("|------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(0) + "\t|\t" + printSession.lapList.get(z).watered.get(0) + "\t|\t(" + printSession.lapList.get(z).temps.get(0) + " / " + printSession.lapList.get(z).temps.get(1) + " / " + printSession.lapList.get(z).temps.get(2) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(0) + " / " + printSession.lapList.get(z).moistures.get(1) + " / " + printSession.lapList.get(z).moistures.get(2) + ")\t|\t"+ printSession.lapList.get(z).notes.get(0) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(1) + "\t|\t" + printSession.lapList.get(z).watered.get(1) + "\t|\t(" + printSession.lapList.get(z).temps.get(3) + " / " + printSession.lapList.get(z).temps.get(4) + " / " + printSession.lapList.get(z).temps.get(5) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(3) + " / " + printSession.lapList.get(z).moistures.get(4) + " / " + printSession.lapList.get(z).moistures.get(5) + ")\t|\t"+ printSession.lapList.get(z).notes.get(1) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(2) + "\t|\t" + printSession.lapList.get(z).watered.get(2) + "\t|\t(" + printSession.lapList.get(z).temps.get(6) + " / " + printSession.lapList.get(z).temps.get(7) + " / " + printSession.lapList.get(z).temps.get(8) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(6) + " / " + printSession.lapList.get(z).moistures.get(7) + " / " + printSession.lapList.get(z).moistures.get(8) + ")\t|\t"+ printSession.lapList.get(z).notes.get(2) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(3) + "\t|\t" + printSession.lapList.get(z).watered.get(3) + "\t|\t(" + printSession.lapList.get(z).temps.get(9) + " / " + printSession.lapList.get(z).temps.get(10) + " / " + printSession.lapList.get(z).temps.get(11) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(9) + " / " + printSession.lapList.get(z).moistures.get(10) + " / " + printSession.lapList.get(z).moistures.get(11) + ")\t|\t"+ printSession.lapList.get(z).notes.get(3) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(4) + "\t|\t" + printSession.lapList.get(z).watered.get(4) + "\t|\t(" + printSession.lapList.get(z).temps.get(12) + " / " + printSession.lapList.get(z).temps.get(13) + " / " + printSession.lapList.get(z).temps.get(14) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(12) + " / " + printSession.lapList.get(z).moistures.get(13) + " / " + printSession.lapList.get(z).moistures.get(14) + ")\t|\t"+ printSession.lapList.get(z).notes.get(4) + "\t|\n");
-	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(5) + "\t|\t" + printSession.lapList.get(z).watered.get(5) + "\t|\t(" + printSession.lapList.get(z).temps.get(15) + " / " + printSession.lapList.get(z).temps.get(16) + " / " + printSession.lapList.get(z).temps.get(17) + ")\t|\t(" + printSession.lapList.get(z).moistures.get(15) + " / " + printSession.lapList.get(z).moistures.get(16) + " / " + printSession.lapList.get(z).moistures.get(17) + ")\t|\t"+ printSession.lapList.get(z).notes.get(5) + "\t|\n");
+	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(5) + "\t|\t" + printSession.lapList.get(z).watered.get(5) + "\t|\t(" + printSession.lapList.get(z).temps.get(15) + " / " + printSession.lapList.get(z).temps.get(16) + " / " + printSession.lapList.get(z).temps.get(17) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(15) + " / " + printSession.lapList.get(z).moistures.get(16) + " / " + printSession.lapList.get(z).moistures.get(17) + ")\t|\t"+ printSession.lapList.get(z).notes.get(5) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(6) + "\t|\t" + printSession.lapList.get(z).watered.get(6) + "\t|\t(" + printSession.lapList.get(z).temps.get(18) + " / " + printSession.lapList.get(z).temps.get(19) + " / " + printSession.lapList.get(z).temps.get(20) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(18) + " / " + printSession.lapList.get(z).moistures.get(19) + " / " + printSession.lapList.get(z).moistures.get(20) + ")\t|\t"+ printSession.lapList.get(z).notes.get(6) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(7) + "\t|\t" + printSession.lapList.get(z).watered.get(7) + "\t|\t(" + printSession.lapList.get(z).temps.get(21) + " / " + printSession.lapList.get(z).temps.get(21) + " / " + printSession.lapList.get(z).temps.get(23) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(21) + " / " + printSession.lapList.get(z).moistures.get(22) + " / " + printSession.lapList.get(z).moistures.get(23) + ")\t|\t"+ printSession.lapList.get(z).notes.get(7) + "\t|\n");
 	    	        								data.append("|\t" + printSession.lapList.get(z).greenNums.get(8) + "\t|\t" + printSession.lapList.get(z).watered.get(8) + "\t|\t(" + printSession.lapList.get(z).temps.get(24) + " / " + printSession.lapList.get(z).temps.get(24) + " / " + printSession.lapList.get(z).temps.get(26) + ")\t\t|\t(" + printSession.lapList.get(z).moistures.get(24) + " / " + printSession.lapList.get(z).moistures.get(25) + " / " + printSession.lapList.get(z).moistures.get(26) + ")\t|\t"+ printSession.lapList.get(z).notes.get(8) + "\t|\n");
-	    	        			        			}
+		    	        			        		}
 	    	        				        }
             	        				}
+                            		if(found == false) {
+                            			data.setText("No Watering Session for this Day");
+                            		}
                         		}
                         		catch(NullPointerException e) {
                         			data.setText("No Watering Session for this Day");
                         		}
+			        			newCal.table.clearSelection();
                         }
                 		});
             		

@@ -337,14 +337,23 @@ public class dataEntry extends JPanel {
 		
 		// Note Fields
 		notes1 = new JTextField();
+		notes1.setHorizontalAlignment(JTextField.CENTER);
 		notes2 = new JTextField();
+		notes2.setHorizontalAlignment(JTextField.CENTER);
 		notes3 = new JTextField();
+		notes3.setHorizontalAlignment(JTextField.CENTER);
 		notes4 = new JTextField();
+		notes4.setHorizontalAlignment(JTextField.CENTER);
 		notes5 = new JTextField();
+		notes5.setHorizontalAlignment(JTextField.CENTER);
 		notes6 = new JTextField();
+		notes6.setHorizontalAlignment(JTextField.CENTER);
 		notes7 = new JTextField();
+		notes7.setHorizontalAlignment(JTextField.CENTER);
 		notes8 = new JTextField();
+		notes8.setHorizontalAlignment(JTextField.CENTER);
 		notes9 = new JTextField();
+		notes9.setHorizontalAlignment(JTextField.CENTER);
 		
 		// Watered CheckBoxes
 		JPanel watered1 = new JPanel(new GridLayout(1, 2));
@@ -618,10 +627,10 @@ public class dataEntry extends JPanel {
 			Tone1.setText("N/A");
 		}
 		if(Tone2.getText().equals("")) {
-			Tone1.setText("N/A");
+			Tone2.setText("N/A");
 		}
 		if(Tone3.getText().equals("")) {
-			Tone1.setText("N/A");
+			Tone3.setText("N/A");
 		}
 		if(Ttwo1.getText().equals("")) {
 			Ttwo1.setText("N/A");

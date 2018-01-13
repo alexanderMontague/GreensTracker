@@ -122,6 +122,8 @@ public class SwingCalendar extends JPanel {
   }
  
   void updateMonth() {
+	  
+	table.clearSelection();  
     cal.set(Calendar.DAY_OF_MONTH, 1);
  
     String month = cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US);
