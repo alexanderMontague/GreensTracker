@@ -6,6 +6,7 @@
 * The application has been used practically at my previous job as a greenskeeper
 * This version is a nicer graphical representation of the C program I came up with during the summer of 2017
 * <b>To run:</b> (Make sure you have a Java JDK or JRE installed!)
+* clone the repo: `git clone https://github.com/alexanderMontague/GreensTracker/edit/master/README.md`
 * Navigate to the project folder: `cd GreensTracker`
 * Navigate to the src folder: `cd src/`
 * Compile the program: `javac GreensTrackerRun.java`
