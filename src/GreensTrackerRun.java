@@ -1,7 +1,7 @@
 // Greens Tracker Application
 // Alexander Montague
 // Updated December 2017
-// Application developed for use during a hand watering shift at the Oakville Golf Club 
+// Application developed for use during a hand watering shift at the Oakville Golf Club
 
 import java.util.*;
 import java.io.*;
@@ -14,7 +14,7 @@ import java.time.*;
 
 
 public class GreensTrackerRun extends JFrame {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private static String[] suffixes =
@@ -26,14 +26,14 @@ public class GreensTrackerRun extends JFrame {
 	       "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
 	  //    30    31
 	       "th", "st" };
-	
+
 	private int lapNum = 1;
-	
+
 	private dataEntry dataEntry1;
 	private dataEntry dataEntry2;
-	
+
 	public GreensTrackerRun() {
-		
+
 		// DEFAULT SETUP
 		setTitle("Greens Tracker");
 		setSize(1000, 700);
@@ -46,17 +46,17 @@ public class GreensTrackerRun extends JFrame {
         basePanel.setEnabled(false);
         basePanel.setDividerSize(0);
 	    add(basePanel);	// main menu split pane
-	    
+
 	    BufferedImage myPicture = null;	// loading the menu picture in
-	    try {                
-	    		myPicture = ImageIO.read(new File("assets/menu.jpg"));
+	    try {
+	    		myPicture = ImageIO.read(new File("./assets/menu.jpg"));
 	    		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
 	        basePanel.add(picLabel);
-	    } 
+	    }
 	    catch (IOException ex) {
 	            System.out.println("Error\n");
 	    }
-	    
+
 	    // MENU COMPONENTS
 	    // Layouts / Fonts
 	    getRootPane().setBorder(BorderFactory.createMatteBorder(10, 10, 10, 10, Color.GRAY));
@@ -67,30 +67,30 @@ public class GreensTrackerRun extends JFrame {
 	    Font timeFont = new Font("Lucidia Sans Unicode", Font.BOLD, 25);
 	    Font buttonFont = new Font("Lucidia Sans Unicode", Font.BOLD, 15);
 	    Font noBold = new Font("Lucidia Sans Unicode", Font.PLAIN, 15);
-	    
+
 	    // Date Stuff
 	    LocalDate date = LocalDate.now();
-	    DayOfWeek dow = date.getDayOfWeek(); 
-	    int dom = date.getDayOfMonth(); 
-	    Month m = date.getMonth(); 
+	    DayOfWeek dow = date.getDayOfWeek();
+	    int dom = date.getDayOfMonth();
+	    Month m = date.getMonth();
 	    int y = date.getYear();
 	    String fullDate = "Today is " + dow + " " + m + " " + dom + suffixes[dom] + ", " + y;
 	    JLabel dateL = new JLabel(fullDate, SwingConstants.CENTER);
 	    Calendar time = Calendar.getInstance();
 	    int hour = time.get(Calendar.HOUR_OF_DAY);
 	    int mins = time.get(Calendar.MINUTE);
-	   
+
 	    // Buttons
 	    JPanel menuButtons = new JPanel(new GridLayout(1, 2));
 	    JButton newWater = new JButton("NEW Watering Session");
 	    JButton viewPast = new JButton("VIEW Past Watering Sessions");
-	    
+
 	    // Additions / Font Setters
 	    menuTitle.setFont(menuFont);
 	    dateL.setFont(timeFont);
 	    newWater.setFont(buttonFont);
 	    viewPast.setFont(buttonFont);
-	    
+
 	    titleTime.add(menuTitle);
 	    titleTime.add(dateL);
 	    basePanel.add(bottomMenu);
@@ -98,23 +98,23 @@ public class GreensTrackerRun extends JFrame {
 	    bottomMenu.add(menuButtons);
 	    menuButtons.add(newWater);
 	    menuButtons.add(viewPast);
-	    
-	    
-	    // NEW HAND WATER 
+
+
+	    // NEW HAND WATER
 	    // SCREEN ONE
 	    newWater.addActionListener(new ActionListener() {    // When the New Water Button is Clicked
             @Override
             public void actionPerformed(ActionEvent ae) {
             		remove(basePanel);
             		invalidate();
-            		
+
             		JPanel initialScreen = new JPanel(new GridLayout(2, 1));
                  BufferedImage waterPic = null;	// loading the water image in
-         	    try {                
-         	    		waterPic = ImageIO.read(new File("assets/handWater.jpg"));
+         	    try {
+         	    		waterPic = ImageIO.read(new File("./assets/handWater.jpg"));
          	    		JLabel waterLabel = new JLabel(new ImageIcon(waterPic));
          	    		initialScreen.add(waterLabel);
-         	    } 
+         	    }
          	    catch (IOException ex) {
          	            System.out.println("Error\n");
          	    }
@@ -139,7 +139,7 @@ public class GreensTrackerRun extends JFrame {
             		int newHour = hour;
             		int newMins = mins;
             		boolean pm = false;
-            		
+
             		// TIME SUFFIXES AND STUFF
             		if((newHour > 12 && newMins > 0) || newHour - 12 == 0) {
             			newHour = hour - 12;
@@ -165,12 +165,12 @@ public class GreensTrackerRun extends JFrame {
             		JTextField startTime = new JTextField(shortTime);
             		startTime.setFont(noBold);
             		startTime.setEditable(false);
-            		
+
             		JButton back = new JButton("BACK");
             		back.setFont(buttonFont);
             		JButton next = new JButton("NEXT");
             		next.setFont(buttonFont);
-            		
+
             		add(initialScreen);
             		JPanel rowOne = new JPanel(new GridLayout(4, 1));
             		rowOne.add(waterNamesL);
@@ -181,13 +181,13 @@ public class GreensTrackerRun extends JFrame {
             		rowOne.add(startTime);
             		rowOne.add(back);
             		rowOne.add(next);
-            		
+
             		initialScreen.add(rowOne);
-            		
+
             		revalidate();
             		repaint();
-            	    
-            		back.addActionListener(new ActionListener() {    
+
+            		back.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent ae) {
                     		GreensTrackerRun back = new GreensTrackerRun();
@@ -196,57 +196,57 @@ public class GreensTrackerRun extends JFrame {
                     	    remove(initialScreen);
                     }
             		});
-            		
-            		next.addActionListener(new ActionListener() {    
+
+            		next.addActionListener(new ActionListener() {
         			   @Override
                     public void actionPerformed(ActionEvent ae) {
                     		if(waterNames.getText().equals("") || waterNames.getText().equals("Enter Names Here") || waterNames.getText().equals("Enter Names!")) {
                     			waterNames.setText("Enter Names!");
                     		}
                     		else {
-                    			
+
                     			// Save input from Previous Screen - Names/Date/Start Time
                     			String names = waterNames.getText();
                     			String date = waterDate.getText();
                     			String initStartTime = startTime.getText();
                     			String welcomeScreen = date + "~" + names + "~" + initStartTime;
-                    			
+
                     			// Write Welcome Screen to File
                 				BufferedWriter fileWriter;
                 				try {
-                					fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+                					fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
                 					fileWriter.write(welcomeScreen + "~");
                 					fileWriter.close();
                 				}
                 				catch(IOException e) {
                 					System.out.println("Error Writing to File\n");
                 				}
-                    			
+
                     			// WATERING DETAILS
                     			remove(initialScreen);
                     			invalidate();
-                    			
+
                     			// Main Split Panel - Title Labels and Big Panel below that holds inputPanel
                     			JSplitPane waterDataScreen = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
                     			waterDataScreen.setResizeWeight(0.05);
                     			waterDataScreen.setEnabled(false);
                     			waterDataScreen.setDividerSize(0);
-                    			
+
                     			// Secondary Split Panel IN second part of waterData Screen - split contains data and button sections
                     			JSplitPane inputPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
                     			inputPanel.setResizeWeight(0.60);
                     			inputPanel.setEnabled(false);
                     			inputPanel.setDividerSize(0);
-                    			
+
                     			// Bottom Panel Buttons
-                    			JPanel bottomPanel = new JPanel(new GridLayout(1, 2));	 
+                    			JPanel bottomPanel = new JPanel(new GridLayout(1, 2));
                     			JButton saveExit = new JButton("Save and Exit");
                     			JButton nextLap = new JButton("Next Lap");
                     			saveExit.setFont(buttonFont);
                     			nextLap.setFont(buttonFont);
                     			bottomPanel.add(saveExit);
                     			bottomPanel.add(nextLap);
-                    			
+
                     			// Input Panel Initial Additions
                     			add(waterDataScreen);
                     			waterDataScreen.add(new titlePanel(lapNum));
@@ -254,18 +254,18 @@ public class GreensTrackerRun extends JFrame {
                     			dataEntry1 = new dataEntry();
                     			inputPanel.add(dataEntry1);
                     			inputPanel.add(bottomPanel);
-                    			
+
                     			revalidate();
                     			repaint();
-                    			
-                    			saveExit.addActionListener(new ActionListener() {	
+
+                    			saveExit.addActionListener(new ActionListener() {
                     	            @Override
                     	            public void actionPerformed(ActionEvent ae) {
 	                    	            	if(dataEntry1 != null) {
 	                	            			// Write data screen to File initial dataEntry panel is already there
 	                	            			BufferedWriter fileWriter;
 	                	            			try {
-	                	            				fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+	                	            				fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
 	                	            				String dataFileWrite = dataEntry1.getDataVals();
 	                	            				fileWriter.write(dataFileWrite);
 	                	            				fileWriter.newLine();
@@ -280,7 +280,7 @@ public class GreensTrackerRun extends JFrame {
 	                	            			// Write data screen to File for new laps now
 	                	            			BufferedWriter fileWriter;
 	                	            			try {
-	                	            				fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+	                	            				fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
 	                	            				String dataFileWrite = dataEntry2.getDataVals();
 	                	            				fileWriter.write(dataFileWrite);
 	                	            				fileWriter.newLine();
@@ -296,15 +296,15 @@ public class GreensTrackerRun extends JFrame {
 	                    	        		dispose();
                     	            }
                     	        });
-                    			
-                    			nextLap.addActionListener(new ActionListener() {	
+
+                    			nextLap.addActionListener(new ActionListener() {
                     	            @Override
                     	            public void actionPerformed(ActionEvent ae) {
                     	            		if(dataEntry1 != null) {
                     	            			// Write data screen to File initial dataEntry panel is already there
                     	            			BufferedWriter fileWriter;
                     	            			try {
-                    	            				fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+                    	            				fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
                     	            				String dataFileWrite = dataEntry1.getDataVals();
                     	            				fileWriter.write(dataFileWrite);
                     	            				fileWriter.close();
@@ -318,7 +318,7 @@ public class GreensTrackerRun extends JFrame {
                     	            			// Write data screen to File for new laps now
                     	            			BufferedWriter fileWriter;
                     	            			try {
-                    	            				fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+                    	            				fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
                     	            				String dataFileWrite = dataEntry2.getDataVals();
                     	            				fileWriter.write(dataFileWrite);
                     	            				fileWriter.close();
@@ -341,15 +341,15 @@ public class GreensTrackerRun extends JFrame {
                     	        });
                     		}
                     }
-            		}); 
+            		});
             }
         });
-	    
+
 	    // DISPLAY PAST HAND WATER SESSIONS
-	    viewPast.addActionListener(new ActionListener() {    
+	    viewPast.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-            		
+
             		basePanel.removeAll();
             		basePanel.setResizeWeight(0.0);
             		SwingCalendar newCal = new SwingCalendar();
@@ -365,7 +365,7 @@ public class GreensTrackerRun extends JFrame {
             		JScrollPane scrollData = new JScrollPane(data);
             		JButton back = new JButton("BACK");
             		back.setFont(buttonFont);
-            		back.addActionListener(new ActionListener() {    
+            		back.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
                         		GreensTrackerRun back = new GreensTrackerRun();
@@ -375,14 +375,14 @@ public class GreensTrackerRun extends JFrame {
                 		});
             		JButton view = new JButton("VIEW");
             		view.setFont(buttonFont);
-            		view.addActionListener(new ActionListener() {    
+            		view.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
                         		try {
                         			boolean found = false;
                         			int calGetDay = (Integer)newCal.table.getValueAt(newCal.table.getSelectedRow(), newCal.table.getSelectedColumn());
                             		for(int i = 0; i < newCal.waterSessions.size(); i++) {
-	    	        	        				waterSession printSession = newCal.waterSessions.get(i);						// current waterSession that is being looked at 
+	    	        	        				waterSession printSession = newCal.waterSessions.get(i);						// current waterSession that is being looked at
 	    	        	        				StringBuilder formatDate = new StringBuilder(printSession.splitDay);
 	    	        	        				formatDate.delete(formatDate.length() - 3, formatDate.length());		// getting rid of date suffixes
 	    	        	        				String formattedDate = formatDate.toString();
@@ -419,28 +419,28 @@ public class GreensTrackerRun extends JFrame {
 			        			newCal.table.clearSelection();
                         }
                 		});
-            		
+
             		top.add(scrollData);
             		bottom.add(back);
             		bottom.add(view);
             		bottomPanel.add(top);
             		bottomPanel.add(bottom);
             		basePanel.add(bottomPanel);
-            		
+
             		repaint();
             		revalidate();
             }
     		});
-	    
+
 	}
-	
+
 	public static void main(String[] args) {
-	    
+
 	    GreensTrackerRun runProgram = new GreensTrackerRun();
 		runProgram.setVisible(true);
-	    
+
 	}
-	
+
 }
 
 

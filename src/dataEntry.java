@@ -1,16 +1,16 @@
 // Alex Montague 2018
 // Data Entry JPanel Class
-// Contains all fields for hand watering 
+// Contains all fields for hand watering
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class dataEntry extends JPanel {
-	
+
 
 	private static final long serialVersionUID = 1L;
-	
+
 	// Note Declaration
 	private JTextField notes1;
 	private JTextField notes2;
@@ -21,7 +21,7 @@ public class dataEntry extends JPanel {
 	private JTextField notes7;
 	private JTextField notes8;
 	private JTextField notes9;
-	
+
 	// Check Boxes Declaration
 	private JCheckBox Wone1;
 	private JCheckBox Wtwo1;
@@ -32,7 +32,7 @@ public class dataEntry extends JPanel {
 	private JCheckBox Wseven1;
 	private JCheckBox Weight1;
 	private JCheckBox Wnine1;
-	
+
 	// Temperature Declaration
 	private JTextField Tone1;
 	private JTextField Tone2;
@@ -61,7 +61,7 @@ public class dataEntry extends JPanel {
 	private JTextField Tnine1;
 	private JTextField Tnine2;
 	private JTextField Tnine3;
-	
+
 	// Moisture Declaration
 	private JTextField Mone1;
 	private JTextField Mone2;
@@ -90,21 +90,21 @@ public class dataEntry extends JPanel {
 	private JTextField Mnine1;
 	private JTextField Mnine2;
 	private JTextField Mnine3;
-	
+
 	public dataEntry() {
-		
+
 	    Font buttonFont = new Font("Lucidia Sans Unicode", Font.BOLD, 15);
 	    Font noBoldSmall = new Font("Lucidia Sans Unicode", Font.PLAIN, 10);
-		
+
 		// Data Input Panel
 		JPanel dataEntries = new JPanel(new GridLayout(10, 5, 0, 0));
 		dataEntries.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createRaisedBevelBorder(), BorderFactory.createLoweredBevelBorder()));
-		
+
 		// Data Entry Screen Components
 		JLabel hole = new JLabel("   Hole", JLabel.CENTER);
 		hole.setFont(buttonFont);
 		hole.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 1, Color.BLACK));
-		
+
 		JPanel tempTitles = new JPanel(new GridLayout(2, 1));
 		JLabel temperature = new JLabel("Temperature", JLabel.CENTER);
 		temperature.setFont(buttonFont);
@@ -113,7 +113,7 @@ public class dataEntry extends JPanel {
 		tempSpot.setFont(noBoldSmall);
 		tempTitles.add(temperature);
 		tempTitles.add(tempSpot);
-		
+
 		JPanel moisTitles = new JPanel(new GridLayout(2, 1));
 		JLabel moisture = new JLabel("Moisture", JLabel.CENTER);
 		moisture.setFont(buttonFont);
@@ -122,25 +122,25 @@ public class dataEntry extends JPanel {
 		moisSpot.setFont(noBoldSmall);
 		moisTitles.add(moisture);
 		moisTitles.add(moisSpot);
-		
+
 		JLabel watered = new JLabel("          Watered", JLabel.LEFT);
 		watered.setFont(buttonFont);
 		watered.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 1, Color.BLACK));
-		
+
 		JLabel notes = new JLabel("Notes", JLabel.CENTER);
 		notes.setFont(buttonFont);
 		notes.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 0, Color.BLACK));
-		
+
 		// Green Picture Icons
-		ImageIcon pic1 = new ImageIcon(new ImageIcon("assets/green1.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-	    ImageIcon pic2 = new ImageIcon(new ImageIcon("assets/green2.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic3 = new ImageIcon(new ImageIcon("assets/green3.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic4 = new ImageIcon(new ImageIcon("assets/green4.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic5 = new ImageIcon(new ImageIcon("assets/green5.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic6 = new ImageIcon(new ImageIcon("assets/green6.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic7 = new ImageIcon(new ImageIcon("assets/green7.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic8 = new ImageIcon(new ImageIcon("assets/green8.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-		ImageIcon pic9 = new ImageIcon(new ImageIcon("assets/green9.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic1 = new ImageIcon(new ImageIcon("./assets/green1.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+	    ImageIcon pic2 = new ImageIcon(new ImageIcon("./assets/green2.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic3 = new ImageIcon(new ImageIcon("./assets/green3.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic4 = new ImageIcon(new ImageIcon("./assets/green4.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic5 = new ImageIcon(new ImageIcon("./assets/green5.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic6 = new ImageIcon(new ImageIcon("./assets/green6.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic7 = new ImageIcon(new ImageIcon("./assets/green7.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic8 = new ImageIcon(new ImageIcon("./assets/green8.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		ImageIcon pic9 = new ImageIcon(new ImageIcon("./assets/green9.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		JLabel green1 = new JLabel ("     Green 1", pic1, JLabel.LEFT);
 		JLabel green2 = new JLabel ("     Green 2", pic2, JLabel.LEFT);
 		JLabel green3 = new JLabel ("     Green 3", pic3, JLabel.LEFT);
@@ -150,7 +150,7 @@ public class dataEntry extends JPanel {
 		JLabel green7 = new JLabel ("     Green 7", pic7, JLabel.LEFT);
 		JLabel green8 = new JLabel ("     Green 8", pic8, JLabel.LEFT);
 		JLabel green9 = new JLabel ("     Green 9", pic9, JLabel.LEFT);
-		
+
 		// Temperature Fields
 		JPanel temp1 = new JPanel(new GridLayout(1, 3));
 		Tone1 = new JTextField();
@@ -242,7 +242,7 @@ public class dataEntry extends JPanel {
 		temp9.add(Tnine1);
 		temp9.add(Tnine2);
 		temp9.add(Tnine3);
-		
+
 		// Moisture Fields
 		JPanel moist1 = new JPanel(new GridLayout(1, 3));
 		Mone1 = new JTextField();
@@ -334,7 +334,7 @@ public class dataEntry extends JPanel {
 		moist9.add(Mnine1);
 		moist9.add(Mnine2);
 		moist9.add(Mnine3);
-		
+
 		// Note Fields
 		notes1 = new JTextField();
 		notes1.setHorizontalAlignment(JTextField.CENTER);
@@ -354,37 +354,37 @@ public class dataEntry extends JPanel {
 		notes8.setHorizontalAlignment(JTextField.CENTER);
 		notes9 = new JTextField();
 		notes9.setHorizontalAlignment(JTextField.CENTER);
-		
+
 		// Watered CheckBoxes
 		JPanel watered1 = new JPanel(new GridLayout(1, 2));
 		Wone1 = new JCheckBox("Yes");
 		JCheckBox Wone2 = new JCheckBox("No");
 		watered1.add(Wone1);
-		watered1.add(Wone2);	
-		Wone1.addActionListener(new ActionListener() {		
+		watered1.add(Wone2);
+		Wone1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wone2.setSelected(false);
             }
         });
-		Wone2.addActionListener(new ActionListener() {	
+		Wone2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wone1.setSelected(false);
             }
-        });		
+        });
 		JPanel watered2 = new JPanel(new GridLayout(1, 2));
 		Wtwo1 = new JCheckBox("Yes");
 		JCheckBox Wtwo2 = new JCheckBox("No");
 		watered2.add(Wtwo1);
 		watered2.add(Wtwo2);
-		Wtwo1.addActionListener(new ActionListener() {		
+		Wtwo1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wtwo2.setSelected(false);
             }
         });
-		Wtwo2.addActionListener(new ActionListener() {	
+		Wtwo2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wtwo1.setSelected(false);
@@ -395,13 +395,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Wthree2 = new JCheckBox("No");
 		watered3.add(Wthree1);
 		watered3.add(Wthree2);
-		Wthree1.addActionListener(new ActionListener() {		
+		Wthree1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wthree2.setSelected(false);
             }
         });
-		Wthree2.addActionListener(new ActionListener() {	
+		Wthree2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wthree1.setSelected(false);
@@ -412,13 +412,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Wfour2 = new JCheckBox("No");
 		watered4.add(Wfour1);
 		watered4.add(Wfour2);
-		Wfour1.addActionListener(new ActionListener() {		
+		Wfour1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wfour2.setSelected(false);
             }
         });
-		Wfour2.addActionListener(new ActionListener() {	
+		Wfour2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wfour1.setSelected(false);
@@ -429,13 +429,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Wfive2 = new JCheckBox("No");
 		watered5.add(Wfive1);
 		watered5.add(Wfive2);
-		Wfive1.addActionListener(new ActionListener() {		
+		Wfive1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wfive2.setSelected(false);
             }
         });
-		Wfive2.addActionListener(new ActionListener() {	
+		Wfive2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wfive1.setSelected(false);
@@ -446,13 +446,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Wsix2 = new JCheckBox("No");
 		watered6.add(Wsix1);
 		watered6.add(Wsix2);
-		Wsix1.addActionListener(new ActionListener() {		
+		Wsix1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wsix2.setSelected(false);
             }
         });
-		Wsix2.addActionListener(new ActionListener() {	
+		Wsix2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wsix1.setSelected(false);
@@ -463,13 +463,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Wseven2 = new JCheckBox("No");
 		watered7.add(Wseven1);
 		watered7.add(Wseven2);
-		Wseven1.addActionListener(new ActionListener() {		
+		Wseven1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wseven2.setSelected(false);
             }
         });
-		Wseven2.addActionListener(new ActionListener() {	
+		Wseven2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wseven1.setSelected(false);
@@ -480,13 +480,13 @@ public class dataEntry extends JPanel {
 		JCheckBox Weight2 = new JCheckBox("No");
 		watered8.add(Weight1);
 		watered8.add(Weight2);
-		Weight1.addActionListener(new ActionListener() {		
+		Weight1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Weight2.setSelected(false);
             }
         });
-		Weight2.addActionListener(new ActionListener() {	
+		Weight2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Weight1.setSelected(false);
@@ -497,26 +497,26 @@ public class dataEntry extends JPanel {
 		JCheckBox Wnine2 = new JCheckBox("No");
 		watered9.add(Wnine1);
 		watered9.add(Wnine2);
-		Wnine1.addActionListener(new ActionListener() {		
+		Wnine1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wnine2.setSelected(false);
             }
         });
-		Wnine2.addActionListener(new ActionListener() {	
+		Wnine2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
             		Wnine1.setSelected(false);
             }
         });
-		
+
 		// Title Labels
 		dataEntries.add(hole);
 		dataEntries.add(tempTitles);
 		dataEntries.add(moisTitles);
 		dataEntries.add(watered);
 		dataEntries.add(notes);
-		
+
 		// Hole One
 		green1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
 		temp1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
@@ -616,13 +616,13 @@ public class dataEntry extends JPanel {
 		dataEntries.add(moist9);
 		dataEntries.add(watered9);
 		dataEntries.add(notes9);
-		
+
 		add(dataEntries);
-		
+
 	}
-	
+
 	public String getDataVals() {
-		
+
 		if(Tone1.getText().equals("")) {
 			Tone1.setText("N/A");
 		}
@@ -818,13 +818,13 @@ public class dataEntry extends JPanel {
 		if(notes9.getText().equals("")) {
 			notes9.setText("N/A");
 		}
-		
-		
+
+
 		// Green# ^ wateredBOOL ^ temps ^ moist ^ notes + NewGreen#... <> New Lap ...
-		
+
 		String dataVals;
-		
-		dataVals = "Green 1^" + Wone1.isSelected() + "^" + Tone1.getText() + "^" + Tone2.getText() + "^" + Tone3.getText() + "^" + Mone1.getText() + "^" + Mone2.getText() + "^" + Mone3.getText() + "^" + notes1.getText() + "+"; 
+
+		dataVals = "Green 1^" + Wone1.isSelected() + "^" + Tone1.getText() + "^" + Tone2.getText() + "^" + Tone3.getText() + "^" + Mone1.getText() + "^" + Mone2.getText() + "^" + Mone3.getText() + "^" + notes1.getText() + "+";
 		dataVals = dataVals + "Green 2^" + Wtwo1.isSelected() + "^" + Ttwo1.getText() + "^" + Ttwo2.getText() + "^" + Ttwo3.getText() + "^" + Mtwo1.getText() + "^" + Mtwo2.getText() + "^" + Mtwo3.getText() + "^" + notes2.getText() + "+";
 		dataVals = dataVals + "Green 3^" + Wthree1.isSelected() + "^" + Tthree1.getText() + "^" + Tthree2.getText() + "^" + Tthree3.getText() + "^" + Mthree1.getText() + "^" + Mthree2.getText() + "^" + Mthree3.getText() + "^" + notes3.getText() + "+";
 		dataVals = dataVals + "Green 4^" + Wfour1.isSelected() + "^" + Tfour1.getText() + "^" + Tfour2.getText() + "^" + Tfour3.getText() + "^" + Mfour1.getText() + "^" + Mfour2.getText() + "^" + Mfour3.getText() + "^" + notes4.getText() + "+";
@@ -832,9 +832,9 @@ public class dataEntry extends JPanel {
 		dataVals = dataVals + "Green 6^" + Wsix1.isSelected() + "^" + Tsix1.getText() + "^" + Tsix2.getText() + "^" + Tsix3.getText() + "^" + Msix1.getText() + "^" + Msix2.getText() + "^" + Msix3.getText() + "^" + notes6.getText() + "+";
 		dataVals = dataVals + "Green 7^" + Wseven1.isSelected() + "^" + Tseven1.getText() + "^" + Tseven2.getText() + "^" + Tseven3.getText() + "^" + Mseven1.getText() + "^" + Mseven2.getText() + "^" + Mseven3.getText() + "^" + notes7.getText() + "+";
 		dataVals = dataVals + "Green 8^" + Weight1.isSelected() + "^" + Teight1.getText() + "^" + Teight2.getText() + "^" + Teight3.getText() + "^" + Meight1.getText() + "^" + Meight2.getText() + "^" + Meight3.getText() + "^" + notes8.getText() + "+";
-		dataVals = dataVals + "Green 9^" + Wnine1.isSelected() + "^" + Tnine1.getText() + "^" + Tnine2.getText() + "^" + Tnine3.getText() + "^" + Mnine1.getText() + "^" + Mnine2.getText() + "^" + Mnine3.getText() + "^" + notes9.getText() + "<>";		
-		
+		dataVals = dataVals + "Green 9^" + Wnine1.isSelected() + "^" + Tnine1.getText() + "^" + Tnine2.getText() + "^" + Tnine3.getText() + "^" + Mnine1.getText() + "^" + Mnine2.getText() + "^" + Mnine3.getText() + "^" + notes9.getText() + "<>";
+
 		return dataVals;
 	}
-	
+
 }

@@ -11,13 +11,13 @@ import javax.swing.*;
 
 
 public class titlePanel extends JPanel{
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public titlePanel(int lapNum) {
-		
+
 		setLayout(new GridLayout(1, 2));
-		
+
 	    Font menuFont2 = new Font("Lucidia Sans Unicode", Font.BOLD + Font.ITALIC, 35);
 	    Font timeFont = new Font("Lucidia Sans Unicode", Font.BOLD, 25);
 
@@ -50,21 +50,21 @@ public class titlePanel extends JPanel{
 			minString = "0" + minString;
 		}
 		String shortTime = newHour + ":" + minString;
-		
+
 		JLabel waterLap = new JLabel("Water Lap " + lapNum, JLabel.CENTER);
 		waterLap.setFont(menuFont2);
 		waterLap.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createRaisedBevelBorder(), BorderFactory.createLoweredBevelBorder()));
 		JLabel realStartTime = new JLabel("Actual Start Time: " + shortTime, JLabel.CENTER);
 		realStartTime.setFont(timeFont);
 		realStartTime.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createRaisedBevelBorder(), BorderFactory.createLoweredBevelBorder()));
-		
+
 		add(waterLap);
 		add(realStartTime);
-		
+
 		// Write Welcome Screen to File
 		BufferedWriter fileWriter;
 		try {
-			fileWriter = new BufferedWriter(new FileWriter("assets/handwaterDATA.txt", true));
+			fileWriter = new BufferedWriter(new FileWriter("./assets/handwaterDATA.txt", true));
 			fileWriter.write(waterLap.getText() + "^" + realStartTime.getText() + "^");
 			fileWriter.close();
 		}
