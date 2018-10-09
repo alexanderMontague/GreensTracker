@@ -5,7 +5,7 @@
 * To use this application make sure Java is installed and all files are downloaded. Run by compiling with your favourite editor, or use Java GreensTrackerRun - if running through the command line, make sure the file paths are still valid, or assets will not read correctly 
 * The application has been used practically at my previous job as a greenskeeper
 * This version is a nicer graphical representation of the C program I came up with during the summer of 2017
-* To run: (Make sure you have a Java JDK or JRE installed!)
+* <b>To run:</b> (Make sure you have a Java JDK or JRE installed!)
 * Navigate to the project folder: `cd GreensTracker`
 * Navigate to the src folder: `cd src/`
 * Compile the program: `javac GreensTrackerRun.java`
